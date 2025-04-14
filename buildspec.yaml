@@ -2,10 +2,10 @@ version: 0.2
 
 env:
   variables:
-    ECR_REGISTRY: "277707106820.dkr.ecr.ca-central-1.amazonaws.com"
-    IMAGE_NAME: "patel-flask-app"
+    ECR_REGISTRY: "920373034562.dkr.ecr.ca-central-1.amazonaws.com"
+    IMAGE_NAME: "dodiya-flask-app"
     IMAGE_TAG: "latest"
-    CONTAINER_NAME: "patel-container"
+    CONTAINER_NAME: "dodiya-container"
 
 phases:
   install:
@@ -21,7 +21,7 @@ phases:
     commands:
       - echo Build started on `date`
       - docker build -t $IMAGE_NAME .
-      - docker tag $IMAGE_NAME:$IMAGE_TAG $ECR_REGISTRY/patel-ecr:$IMAGE_TAG
+      - docker tag $IMAGE_NAME:$IMAGE_TAG $ECR_REGISTRY/dodiya-ecr:$IMAGE_TAG
   post_build:
     commands:
       - echo Pushing the Docker image...
